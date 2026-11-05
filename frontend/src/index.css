@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family: Inter, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+@layer components {
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-soft;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-semibold transition active:scale-95 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary to-violet text-white shadow-lg shadow-indigo-200;
+  }
+  .btn-secondary {
+    @apply btn border border-slate-200 bg-white text-slate-700 hover:bg-slate-50;
+  }
+  .field {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-3.5 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-indigo-100;
+  }
+  .field-label {
+    @apply block space-y-2 text-sm font-semibold;
+  }
+  .page-wrap {
+    @apply mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8;
+  }
+  .chip {
+    @apply rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-primary hover:text-primary;
+  }
+  .chip-active {
+    @apply border-slate-900 bg-slate-900 text-white hover:border-slate-900 hover:text-white;
+  }
+}
+.dark body {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+.dark .card,
+.dark .field {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+.dark .btn-secondary {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+.dark .chip {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+.dark .chip-active {
+  background: #f8fafc;
+  border-color: #f8fafc;
+  color: #0f172a;
+}
