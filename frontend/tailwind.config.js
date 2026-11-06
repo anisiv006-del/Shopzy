@@ -3,8 +3,15 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      colors: { primary: "#6366F1", violet: "#8B5CF6", coral: "#F43F5E" },
-      boxShadow: { soft: "0 10px 35px rgba(15,23,42,.08)" },
+      colors: {
+        primary: "#1f7a5d",
+        "primary-dark": "#145b45",
+        accent: "#eaf6f0",
+        soft: "#f4f8f5",
+      },
+      boxShadow: {
+        soft: "0 12px 30px rgba(31, 122, 93, 0.08)",
+      },
     },
   },
   plugins: [],

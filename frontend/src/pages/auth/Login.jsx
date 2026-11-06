@@ -62,15 +62,17 @@ export default function Login() {
           : `Enter the code sent to ${form.emailId}`
       }
     >
-      <div className="mt-6 flex rounded-xl bg-slate-100 p-1 dark:bg-slate-900">
+      <div className="mt-6 flex rounded-xl border border-green-100 bg-green-50 p-1">
         <button
-          className={`flex-1 rounded-lg py-2 text-sm font-bold ${role === "user" ? "bg-white shadow dark:bg-slate-800" : ""}`}
+          type="button"
+          className={`flex-1 rounded-lg py-2 text-sm font-bold transition ${role === "user" ? "bg-white text-primary shadow-sm" : "text-slate-500"}`}
           onClick={() => setRole("user")}
         >
           Customer
         </button>
         <button
-          className={`flex-1 rounded-lg py-2 text-sm font-bold ${role === "admin" ? "bg-white shadow dark:bg-slate-800" : ""}`}
+          type="button"
+          className={`flex-1 rounded-lg py-2 text-sm font-bold transition ${role === "admin" ? "bg-white text-primary shadow-sm" : "text-slate-500"}`}
           onClick={() => setRole("admin")}
         >
           Admin

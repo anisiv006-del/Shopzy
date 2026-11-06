@@ -42,7 +42,7 @@ export default function Cart() {
               {items.map((item) => (
                 <div className="card flex gap-4 p-4" key={item._id}>
                   <img
-                    className="h-28 w-28 rounded-xl bg-slate-100 object-contain p-2 dark:bg-slate-900"
+                    className="h-28 w-28 rounded-xl bg-[#f3f8f4] object-contain p-2"
                     src={item.image}
                     alt=""
                   />
@@ -50,16 +50,16 @@ export default function Cart() {
                     <h2 className="font-bold">{item.title}</h2>
                     <p className="mt-1 font-semibold">{currency(item.price)}</p>
                     <div className="mt-5 flex items-center gap-3">
-                      <div className="flex items-center rounded-lg border">
+                      <div className="flex items-center rounded-lg border border-green-100 bg-[#f8fbf9]">
                         <button
-                          className="p-2"
+                          className="p-2 text-slate-600 hover:text-primary"
                           onClick={() => update(item._id, item.quantity - 1)}
                         >
                           <Minus size={14} />
                         </button>
-                        <span>{item.quantity}</span>
+                        <span className="min-w-6 text-center font-medium">{item.quantity}</span>
                         <button
-                          className="p-2"
+                          className="p-2 text-slate-600 hover:text-primary"
                           onClick={() => update(item._id, item.quantity + 1)}
                         >
                           <Plus size={14} />
@@ -81,7 +81,7 @@ export default function Cart() {
                   </div>
                 </div>
               ))}
-              <button className="text-sm font-bold text-coral" onClick={clear}>
+              <button className="text-sm font-bold text-primary" onClick={clear}>
                 Clear cart
               </button>
             </div>
@@ -96,7 +96,7 @@ export default function Cart() {
                   <span>Shipping</span>
                   <span>{subtotal >= 500 ? "Free" : currency(49)}</span>
                 </div>
-                <div className="mt-4 flex justify-between border-t border-slate-200 pt-4 text-lg font-bold dark:border-slate-700">
+                <div className="mt-4 flex justify-between border-t border-slate-200 pt-4 text-lg font-bold">
                   <span>Total</span>
                   <span>
                     {currency(subtotal >= 500 ? subtotal : subtotal + 49)}

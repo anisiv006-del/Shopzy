@@ -56,9 +56,9 @@ export default function ProductDetails({ reviews = false }) {
           <ArrowLeft size={16} /> Back to shop
         </Link>
         <div className="grid gap-12 lg:grid-cols-2">
-          <div className="card flex min-h-[480px] items-center justify-center bg-slate-100 p-10 dark:bg-slate-900">
+          <div className="card h-[480px] overflow-hidden bg-[var(--panel-soft)]">
             <img
-              className="max-h-[440px] max-w-full object-contain"
+              className="h-full w-full object-cover"
               src={product.image}
               alt={product.title}
             />
@@ -78,16 +78,16 @@ export default function ProductDetails({ reviews = false }) {
               {product.description}
             </p>
             <div className="mt-8 flex gap-3">
-              <div className="flex items-center rounded-xl border border-slate-200 dark:border-slate-700">
+              <div className="flex items-center rounded-xl border border-green-100 bg-[#f8fbf9]">
                 <button
-                  className="p-3"
+                  className="p-3 text-slate-600 transition hover:text-primary"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                 >
                   <Minus size={16} />
                 </button>
-                <span className="w-10 text-center">{quantity}</span>
+                <span className="w-10 text-center font-semibold">{quantity}</span>
                 <button
-                  className="p-3"
+                  className="p-3 text-slate-600 transition hover:text-primary"
                   onClick={() =>
                     setQuantity(Math.min(product.quantity, quantity + 1))
                   }

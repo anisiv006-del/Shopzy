@@ -45,15 +45,14 @@ export default function Shop() {
   return (
     <CustomerLayout>
       <div className="page-wrap">
-        <div className="mb-9 flex flex-wrap items-end justify-between gap-5">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="font-bold text-primary">CURATED FOR YOU</p>
-            <h1 className="mt-2 text-4xl font-extrabold tracking-tight">
-              The everyday edit
-            </h1>
-            <p className="mt-2 text-slate-500">
-              Objects with purpose, selected for modern living.
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              Curated for you
             </p>
+            <h1 className="mt-2 text-3xl font-extrabold tracking-tight">
+              Everyday essentials
+            </h1>
           </div>
           <select
             className="field w-auto"

@@ -24,12 +24,12 @@ export default function ProductCard({ product }) {
   };
   return (
     <article className="card group overflow-hidden">
-      <div className="relative flex h-56 items-center justify-center bg-slate-100 p-6 dark:bg-slate-900">
-        <Link to={`/product/${product.id}`} className="h-full w-full">
+      <div className="relative h-56 overflow-hidden bg-[var(--panel-soft)]">
+        <Link to={`/product/${product.id}`} className="block h-full w-full">
           <img
             src={product.image}
             alt={product.title}
-            className="h-full w-full object-contain transition duration-500 group-hover:scale-110"
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             onError={(event) => {
               event.currentTarget.src =
                 "https://placehold.co/500x500/e2e8f0/64748b?text=Shopzy";
@@ -38,15 +38,15 @@ export default function ProductCard({ product }) {
         </Link>
         <button
           aria-label="Add to wishlist"
-          className="absolute right-4 top-4 rounded-full bg-white p-2 text-coral shadow-sm"
+          className="absolute right-3 top-3 rounded-full bg-white p-2 text-primary shadow-sm ring-1 ring-[var(--line)]"
           onClick={wishlist}
         >
           <Heart size={17} />
         </button>
       </div>
-      <div className="p-5">
-        <div className="flex items-center justify-between text-xs text-slate-500">
-          <span className="rounded-full bg-indigo-50 px-2.5 py-1 font-semibold text-primary">
+      <div className="p-4">
+        <div className="flex items-center justify-between text-[11px] text-slate-500">
+          <span className="rounded-full bg-[var(--primary-soft)] px-2 py-1 font-semibold text-primary">
             {product.category}
           </span>
           <span>
@@ -58,7 +58,7 @@ export default function ProductCard({ product }) {
           </span>
         </div>
         <Link to={`/product/${product.id}`}>
-          <h3 className="mt-3 line-clamp-2 min-h-12 font-bold">
+          <h3 className="mt-3 line-clamp-2 min-h-10 text-sm font-bold leading-5">
             {product.title}
           </h3>
         </Link>

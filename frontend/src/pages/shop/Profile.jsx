@@ -36,13 +36,13 @@ export default function Profile() {
     <CustomerLayout>
       <div className="page-wrap max-w-4xl">
         <div className="card flex items-center gap-5 p-7">
-          <div className="grid h-20 w-20 place-items-center rounded-full bg-gradient-to-br from-primary to-violet text-2xl font-bold text-white">
+          <div className="grid h-20 w-20 place-items-center rounded-full bg-primary text-2xl font-bold text-white shadow-sm shadow-green-200">
             {initials(profile?.username)}
           </div>
           <div>
             <h1 className="text-2xl font-extrabold">{profile?.username}</h1>
             <p className="text-slate-500">{profile?.emailId}</p>
-            <span className="mt-2 inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
+            <span className="mt-2 inline-block rounded-full bg-green-50 px-3 py-1 text-xs font-bold text-primary">
               {profile?.role}
             </span>
           </div>
